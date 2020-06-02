@@ -1109,6 +1109,7 @@ console.log(foods);
 
 // Updating elements
 
+/*
 var foods = ["Pizza", "Burger", "Snaks"];
 console.log(foods[1]);
 
@@ -1119,3 +1120,165 @@ foods[3] = "French fries"; // Adding 1 more element
 
 console.log(foods[3]);
 console.log(foods);
+
+*/
+
+// Prime Number Example
+
+/*
+
+var num = +prompt("please enter number ");
+var isPrime = true;
+for (var i = 2; i < num; i++) {
+  var result = num % i;
+  if (result == 0) {
+    console.log("Number is not Prime = " + num + " i=" + i);
+    isPrime = false;
+    break;
+  }
+}
+
+if (isPrime == true) {
+  console.log(num + " is prime number.");
+}
+
+*/
+
+// You can find out number of elements in an array by length property
+
+/*
+var foods = ["Pizza", "Burger", "Snaks"];
+
+console.log(foods.length); //3
+
+var arr = [];
+
+console.log(arr.length); //0
+*/
+
+// Push Function (Add elements to the end of array)
+
+/*
+var foods = [];
+
+foods.push("Pizza");
+foods.push("Nihari");
+foods.push("Biryani");
+
+console.log(foods);
+*/
+
+// *** Push Function --- Multiple input ***
+
+/*
+var foods = [];
+
+foods.push("Burger");
+foods.push("French fries", "biryani");
+foods.push("zinger");
+
+console.log(foods);
+console.log(foods[1]);
+*/
+
+/*
+var foods = [];
+
+foods.push(prompt("Enter first foods item"));
+foods.push(prompt("Enter second food item"));
+foods.push(prompt("Enter third food item"));
+
+console.log(foods);
+
+*/
+
+// *** pop function (pop function remove and return last element from an array) ***
+
+/*
+var foods = [];
+
+foods.push("biryani");
+foods.push("zinger");
+foods.push("snaks");
+
+console.log(foods);
+console.log("Length = " + foods.length);
+
+foods.pop();
+var a1 = foods.pop();
+console.log(a1);
+
+console.log(foods);
+console.log("Length = " + foods.length);
+*/
+
+// *** shift (shift function will remove and return first element from array) ***
+
+/*
+var foods = [];
+
+foods.push("pizza");
+foods.push("burger");
+foods.push("snaks");
+
+console.log(foods);
+console.log("Length = " + foods.length);
+
+foods.shift();
+foods.shift();
+
+console.log(foods);
+console.log("Length = " + foods.length);
+
+console.log(foods[0]);
+*/
+
+// *** unshift (unshift will add elements from starting of array) **
+
+/*
+var foods = ["Pizza", "Burger", "Snaks"];
+
+console.log(foods);
+
+foods.unshift("Sandwich");
+
+console.log(foods);
+
+foods.unshift("Biryani");
+
+console.log(foods);
+
+console.log(foods[0]);
+console.log(foods[1]);
+
+*/
+
+// *** Array with loop ***
+
+/*
+
+var foods = ["Pizza", "Burger", "Snaks"];
+
+for (var i = 0; i < foods.length; i++) {
+  console.log(i + " = " + foods[i]);
+}
+
+*/
+
+/*
+
+var arr = [1, 2, 3, 4, 5, 6, 7];
+
+for (var i = 0; i < arr.length; i++) {
+  arr[i] = arr[i] * 2;
+  console.log(arr[i]);
+}
+
+*/
+
+var arr = [];
+
+for (var i = 0; i < 5; i++) {
+  arr[i] = i * 2;
+  console.log(arr[i]);
+}
