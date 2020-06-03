@@ -1042,6 +1042,21 @@ for (var i = 0; i < 8; i++) {
 }
 */
 
+// *** Nested Loop ***
+// If a loop exists inside the body of another loop it's called nested loop
+
+/*
+console.log("Before outer");
+
+for (var i = 0; i < 5; i++) {
+  for (var j = 0; j < 3; j++) {
+    console.log("i = " + i + " j = " + j);
+  }
+}
+
+console.log("After outer");
+*/
+
 // *** Arrays ***
 
 // JavaScript arrays are used to store mutiple values in a single variable
@@ -1276,9 +1291,95 @@ for (var i = 0; i < arr.length; i++) {
 
 */
 
+/*
 var arr = [];
 
 for (var i = 0; i < 5; i++) {
   arr[i] = i * 2;
   console.log(arr[i]);
 }
+
+*/
+
+// *** Task Search in Array ***
+
+/*
+var arr = [44, 12, 1, 10, 9, 8, 22];
+var input = parseInt(prompt("Enter number to finds"));
+var found = false;
+
+console.log("User input " + input);
+
+for (var i = 0; i < arr.length; i++) {
+  if (input === arr[i]) {
+    console.log(input + " found on index = " + i);
+    found = true;
+    break;
+  }
+}
+
+if (!found) {
+  console.log("Not found");
+}
+*/
+
+// *** Splice function (if we want to add element in middole of array or any index other than first/last then we can use splice)
+// splice function can add one or more element on particular index in array
+// splice funtion return these value and we can store them other variable and use them
+
+/*
+var foods = ["Pizza", "Burger", "Snaks"];
+
+console.log(foods); // "Pizza", "Burger", "Snaks"
+
+// this will add 1 element on index 1 and move all elements one index forward
+
+foods.splice(1, 0, "Sandwich"); 
+console.log(foods); // "Pizza", "Sandwich", "Burger", "Snaks"
+*/
+
+/*
+var foods = ["Pizza", "Burger", "Snaks"];
+
+console.log(foods); // "Pizza", "Burger", "Snaks"
+
+foods.splice(1, 0, "Sandwich", "Fries"); 
+
+console.log(foods); // "Pizza", "Sandwich", "Fries", "Burger", "Snaks"
+*/
+
+/*
+var foods = ["Pizza", "Burger", "Snaks"];
+
+console.log(foods); // "Pizza", "Burger", "Snaks"
+
+foods.splice(1, 2, "Sandwich"); // "Pizza", "Sandwich",
+
+console.log(foods); // "Pizza", "Sandwich",
+*/
+
+// *** Slice function ***
+// to create array from element of existing array you can use slice function
+// slice takes start and end index of array to create new array
+
+/*
+var foods = ["Pizza", "Burger", "Snacks", "Sandwich", "Fries"];
+
+console.log(foods); // "Pizza", "Burger", "Snacks", "Sandwich", "Fries"
+
+var arr = foods.slice(1, 3);
+
+console.log(foods); // output same as above
+
+console.log(arr); // "Burger", "Snacks"
+*/
+
+/*
+var foods = ["Pizza", "Burger", "Snacks", "Sandwich", "Fries"];
+
+console.log(foods); // "Pizza", "Burger", "Snacks", "Sandwich", "Fries"
+
+var arr = foods.slice(2); // Just start index
+
+console.log(arr); // "Snacks", "Sandwich", "Fries"
+*/
