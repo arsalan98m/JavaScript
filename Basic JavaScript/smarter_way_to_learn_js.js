@@ -1022,9 +1022,649 @@ var myCity = prompt("Enter your city");
 
 for (var i = 0; i < 5; i++) {
   if (myCity == cities[i]) {
-    console.log("city found.");
+    alert("city found.");
   } else {
-    console.log("city not found");
+    alert("city not found");
   }
 }
 */
+
+// ------------ Chapter 19 : for loops (Flags, Booleans, array length, and loopus interrupts) ---------
+
+/*
+var cities = ["karachi", "lahore", "islamabd", "peshawar", "hyderabad"];
+cityToCheck = prompt("Enter your city");
+var matchFound = "no";
+
+for (var i = 0; i < cities.length; i++) {
+  if (cityToCheck == cities[i]) {
+    matchFound = "yes";
+    alert("It's one of the cleanest cities.");
+  }
+}
+
+if (matchFound === "no") {
+  alert("It's not on the list.");
+}
+*/
+
+// This works, but rather than assigning the strings "no" and "yes" to the switch, it's
+// conventional to use the Boolean values false and true.
+
+/*
+var cities = ["karachi", "lahore", "islamabd", "peshawar", "hyderabad"];
+cityToCheck = prompt("Enter your city");
+var matchFound = false;
+
+for (var i = 0; i < cities.length; i++) {
+  if (cityToCheck == cities[i]) {
+    matchFound = true;
+    alert("It's one of the cleanest cities.");
+  }
+}
+
+if (matchFound === false) {
+  alert("It's not on the list.");
+}
+*/
+
+// The next problem with our example is that it potentially wastes computing cycles.
+// Suppose on the second loop a match is found and the alert displays. The way the loop is
+// coded, the loop goes on looping all the way to the end. This is unnecessary, since we got our
+// answer in the second loop. The problem is solved with the keyword break.
+
+/*
+var cities = ["karachi", "lahore", "islamabd", "peshawar", "hyderabad"];
+cityToCheck = prompt("Enter your city");
+var matchFound = false;
+
+for (var i = 0; i < cities.length; i++) {
+  if (cityToCheck == cities[i]) {
+    matchFound = true;
+    console.log("It's one of the cleanest cities.");
+    break;
+  }
+}
+
+if (matchFound === false) {
+  console.log("It's not on the list.");
+}
+*/
+
+// ---------- Chapter 20 : for loops Nested ----------------
+
+/*
+for (var i = 0; i < 3; i++) {
+  for (var j = 0; j < 2; j++) {
+    console.log(i + " - " + j);
+  }
+}
+*/
+
+/*
+var products = ["shirt", "trouser", "jacket"];
+var complimentaryGifts = ["pen", "keychain", "tie"];
+
+for (var i = 0; i < products.length; i++) {
+  for (var j = 0; j < complimentaryGifts.length; j++) {
+    console.log(products[i] + "--" + complimentaryGifts[j]);
+  }
+}
+*/
+
+/*
+var firstNames = ["Blueray", "Upchuck", "Lojack", "Gizmo", "Do-Rag"];
+
+var lastNames = ["Zzz", "Burp", "Dogbone", "Droop"];
+
+var full_names = [];
+
+for (var i = 0; i < firstNames.length; i++) {
+  for (var j = 0; j < lastNames.length; j++) {
+    full_names.push(firstNames[i] + lastNames[j]);
+  }
+}
+
+for (var k = 0; k < full_names.length; k++) {
+  console.log(full_names[k]);
+}
+*/
+
+// ------------ Extra -------------------------
+
+//    ----- String Interpolation ---------
+// In the ES6 version of JavaScript, we can insert, or interpolate, variables into strings using template literals
+
+//a template literal is wrapped by backticks ` (this key is usually located on the top of your keyboard, left of the 1 key).
+
+//Inside the template literal, you’ll see a placeholder, ${myPet}. The value of myPet is inserted into the template literal.
+
+/*
+var myName = "arsalan";
+var myCity = "karachi";
+
+console.log(`My name is ${myName}. My favorite city is ${myCity}`);
+*/
+
+// -------- Ternary Operator (conditional operator) --------
+// bilkul if else ki tarah work karta hai
+// condition ya tu true hogi ya false
+// isme hum bohta sari statement nahi dal sakty simple ek hi statement dal sakty hain
+// agar hamy ek hi statement chahiyeh result main tu hum yeh use karty hain
+
+// syntax: (condition)? True Statement : False Statement
+
+/*
+var a = 100;
+var b;
+
+a == 100 ? (b = "True") : (b = "False");
+
+console.log(b);
+*/
+
+/*
+var a = 100;
+var b;
+
+b = a == 101   ? "True" : "False";
+console.log(b);
+*/
+
+/*
+var a = 100;
+var b;
+
+b = "Value is " + (a > 10 ? "True" : "False");
+
+console.log(b);
+*/
+
+// ---------------- Chapter 21 : Changing Case -----------------------
+
+/*
+var cleanestCities = [
+  "karachi",
+  "lahore",
+  "multan",
+  "hyderabad",
+  "islamabad",
+  "peshawar",
+];
+
+var cityToCheck = prompt("Enter your city");
+cityToCheck = cityToCheck.toLowerCase();
+console.log(cityToCheck);
+
+for (var i = 0; i < cleanestCities.length; i++) {
+  if (cityToCheck === cleanestCities[i]) {
+    alert("It's one of the clenest city");
+  }
+}
+
+*/
+
+/*
+var cities = ["Karachi", "Lahore", "Islamabd", "Hyderabad"];
+
+var myCity = "Karachi";
+alert(myCity.toUpperCase());
+alert(myCity.toLowerCase());
+
+for (var i = 0; i < cities.length; i++) {
+  if (cities[i] === myCity) {
+    alert("city found");
+  }
+}
+*/
+
+/*
+var cities = ["Karachi", "Lahore", "Islamabd", "Hyderabad"];
+var myCity = prompt("Enter your city");
+
+for (var i = 0; i < cities.length; i++) {
+  if (cities[i].toUpperCase() === myCity.toUpperCase()) {
+    alert("city found");
+  }
+}
+*/
+
+/*
+var myCity = "kARACHi";
+console.log(myCity.toUpperCase());
+console.log(myCity.toLowerCase());
+*/
+
+// ------------------ Chapter 22 : Strings Measuring length and extracting parts -----------------
+
+var cityToCheck = "karachi";
+
+/*
+var firstChar = cityToCheck.slice(0, 1);
+
+var someChars = cityToCheck.slice(2, 5);
+
+console.log(cityToCheck);
+console.log(firstChar);
+console.log(someChars);
+
+var someChars = cityToCheck.slice(2);
+console.log(someChars);
+*/
+
+/*
+var firstChar = cityToCheck.slice(0, 1);
+var otherChars = cityToCheck.slice(1);
+firstChar = firstChar.toUpperCase();
+otherChars = otherChars.toLowerCase();
+var cappedCity = firstChar + otherChars;
+
+console.log(cappedCity);
+*/
+
+/*
+var month = prompt("Enter a month");
+var charsInMonth = month.length;
+
+if (charsInMonth > 3) {
+  monthAbbrev = month.slice(0, 3);
+  console.log(monthAbbrev);
+}
+*/
+
+// Here's some code that checks for double spaces in a string and displays an alert if they're found.
+
+/*
+var str = prompt("Enter some text");
+var numChars = str.length;
+
+for (var i = 0; i < numChars; i++) {
+  if (str.slice(i, i + 2) == " ") {
+    alert("No double spaces!");
+    break;
+  }
+}
+*/
+
+/*
+var myCity = "karachi";
+var newText = myCity.slice(0, 3);
+alert(newText); // kar
+
+var newText2 = myCity.slice(2, 6);
+alert(newText2); // rach
+
+var newText3 = myCity.slice(2);
+alert(newText3); // rachi
+*/
+
+/*
+var a = "karachi";
+var b = a.toUpperCase();
+alert(a);
+alert(b);
+*/
+
+/*
+var myCity = "kArAchI";
+alert(myCity.length);
+*/
+
+// -------------------------- Chapter 23 : finding segments ---------------------------
+
+/*
+var text = "The New Yorker magazine doesn't allow the phrase World War II.";
+
+for (var i = 0; i < text.length; i++) {
+  if (text.slice(i, i + 12) === "World War II") {
+    text = text.slice(0, i) + " the Second World War" + text.slice(i + 12);
+
+    console.log(text);
+  }
+}
+*/
+
+// But JavaScript has a more efficient way to accomplish this, using the indexOf method.
+
+/*
+var text = "The New Yorker magazine doesn't allow the phrase World War II.";
+
+var firstChar = text.indexOf("World War II");
+console.log(firstChar);
+
+if (firstChar !== -1) {
+  text =
+    text.slice(0, firstChar) +
+    "the Second World War" +
+    text.slice(firstChar + 12);
+  console.log(text);
+}
+*/
+
+/*
+var text = "To be or not to be.";
+var segIndex = text.lastIndexOf("be");
+console.log(segIndex);
+*/
+
+/*
+var text = "The quick brown fox jumps over the lazy dog.";
+
+var indexVal1 = text.indexOf("brown");
+var indexVal2 = text.indexOf("over");
+var indexVal3 = text.indexOf("test");
+var indexVal4 = text.indexOf("b");
+var indexVal5 = text.indexOf("B");
+var indexVal6 = text.indexOf("o");
+
+console.log(indexVal1);
+console.log(indexVal2);
+console.log(indexVal3);
+console.log(indexVal4);
+console.log(indexVal5);
+console.log(indexVal6);
+*/
+
+/*
+var text = "The quick brown fox jumps over the lazy dog.";
+var firstCharIndex = text.indexOf("brown");
+
+if (firstCharIndex !== -1) {
+  var a = text.slice(0, firstCharIndex);
+  var b = text.slice(firstCharIndex + 5);
+
+  console.log(a); // The quick
+  console.log(b); // fox jumps over the lazy dog
+  console.log(text);
+
+  var c = a + "white" + b;
+  console.log(c); // The quick white fox jumps over the lazy dog
+}
+*/
+
+/*
+var text = "The quick fox jumps over the brown lazy dog";
+
+var firstCharIndex = text.indexOf("o");
+var lastCharIndex = text.lastIndexOf("o");
+console.log(firstCharIndex);
+console.log(lastCharIndex);
+*/
+
+/*
+var text = "The quick brown fox jumps over the lazy dog.";
+
+var firstCharIndex = text.indexOf("o", 19); // this mean start searching from 19 index if omit the number searching starts from beginning
+console.log(firstCharIndex);
+*/
+
+/*
+var text = "The quick brown fox jumps over the lazy dog.";
+var startIndex = 0;
+var counter = 0;
+
+for (var a = 0; a < text.length; a++) {
+  var newIndex = text.indexOf("e", startIndex);
+
+  if (newIndex !== -1) {
+    counter++;
+    startIndex = newIndex + 1;
+  }
+}
+
+console.log(counter);
+console.log(startIndex);
+*/
+
+// --------------------- Chapter 24  Strings : Finding a charachter at a location ------------------
+
+/*
+var firstName = "arsalan";
+
+var firstChar = firstName.slice(0, 1);
+
+console.log(firstChar);
+
+// Here's an alternate way to do it that's more direct.
+
+var anotherChar = firstName.charAt(0);
+console.log(anotherChar);
+
+// The following code finds the last character in the string
+
+var lastChar = firstName.charAt(firstName.length - 1);
+console.log(lastChar);
+*/
+
+/*
+var text = "hello world !";
+
+for (var i = 0; i < text.length; i++) {
+  if (text.charAt(i) === "!") {
+    console.log("Exclamation point found!");
+    break;
+  }
+}
+
+// Note the indexOf method can only identify the character at a particular location. It can't change the character at a location
+*/
+
+/*
+var text = "The quick brown fox jumps over the lazy dog";
+
+console.log(text.charAt(13));
+*/
+
+// ---------------- Chapter 25 Strings : Replacing characters ----------------------------
+
+/*
+var text = "The New Yorker magazine doesn't allow the phrase World War II.";
+
+var newText = text.replace("World War II", "the Second World War");
+
+console.log(newText);
+
+// In the examples above, only the first instance of a string is replaced. If you want to
+// replace all instances, you must let JavaScript know that you want a global replace.
+
+var newText2 = text.replace(/World War II/g, "the second world war");
+
+console.log(newText2);
+*/
+
+/*
+var text = "The quick brown fox jumps over the lazy dog";
+
+var newText1 = text.replace("brown", "white");
+
+var newText2 = text.replace("over", "white");
+
+console.log(newText1);
+console.log(newText2);
+*/
+
+/*
+var text = "the quick brown fox jumps over the lazy dog";
+
+var newText1 = text.replace("the", "not");
+var newText2 = text.replace(/the/g, "not");
+
+console.log(newText1);
+console.log(newText2);
+*/
+
+// ---------------- Chapter 26 Rounding Numbers ----------------------------
+
+/*
+var a = Math.round(3.4);
+alert(a);
+
+var b = Math.round(3.5);
+alert(b);
+
+var c = Math.round(3.7);
+alert(c);
+
+var d = Math.round(-3.7);
+alert(d);
+
+var e = Math.round(-3.4);
+alert(e);
+
+var f = Math.round(-3.2);
+alert(f);
+*/
+
+/*
+var a = Math.round(0.678437);
+alert("A : " + a);
+
+var b = Math.round(0.2678437);
+alert("B : " + b);
+
+var c = Math.round(0.6678437);
+alert("C : " + c);
+*/
+
+/*
+var a = Math.floor(3.4);
+alert("A : " + a);
+
+var b = Math.floor(3.9);
+alert("B : " + b);
+*/
+
+/*
+var c = Math.ceil(3.4);
+alert("C : " + c);
+
+var d = Math.ceil(3.9);
+alert("D : " + d);
+*/
+
+// -------------------------- Chapter 27 : Generating Random numbers -----------------------
+
+// var randomNumber = Math.random();
+
+// alert(randomNumber);
+
+/*
+var a = Math.random();
+
+var b = a * 10;
+var c = a * 100;
+var d = a * 1000;
+
+console.log("A: " + a);
+console.log("B: " + b);
+console.log("C: " + c);
+console.log("D: " + d);
+*/
+
+/*
+var bigDecimal = Math.random();
+var improvedNum = bigDecimal * 6 + 1;
+var numberOfStars = Math.floor(improvedNum);
+
+console.log("Random number 1 to 6: " + numberOfStars);
+*/
+
+// ----------------- Chapter 28 : Converting strings to integers and decimals ------------------
+
+/*
+var currentAge = prompt("Enter your age");
+
+var yearsEligibleToVote = currentAge - 18;
+
+console.log(yearsEligibleToVote);
+
+var profit = "200" - "150";
+
+console.log(profit);
+
+var profit = "200" - "duck";
+console.log(profit);
+
+var result = "200" + 150;
+console.log(result);
+*/
+
+/*
+var currentAge = prompt("Enter current age");
+var qualifyAge = parseInt(currentAge) + 1;
+
+console.log(qualifyAge);
+
+var myInteger = parseInt("1.9999");
+console.log(myInteger);
+
+var myFractional = parseFloat("1.99999");
+console.log(myFractional);
+*/
+
+/*
+var a = 23;
+var b = "23";
+
+var c = b + 5;
+var d = a + 5;
+
+console.log(c);
+console.log(d);
+*/
+
+// Convert strings to integer decimals
+
+/*
+var a = "23";
+var b = a + 5;
+
+console.log(a);
+console.log(b);
+*/
+
+// ---------------- Chapter 29 : Converting strings to numbers, numbers to strings ---------------------
+
+/*
+// Number( this handy conversion tool converts a string representing either an integer or floating point number)
+
+// The following code converts the string "24" to the number 24.
+
+var integerString = "24";
+var num = Number(integerString);
+console.log(num);
+
+// The following code converts the string "24.9876" to the number 24.9876.
+
+var floatingNumString = "24.9876";
+var num = Number(floatingNumString);
+console.log(num);
+
+// Converting a number to a string, perhaps so you can format it, is straightforward.
+
+var numberAsNumber = 1234;
+var numberAsString = numberAsNumber.toString();
+console.log(numberAsString);
+*/
+
+/*
+var num = 1548;
+var newVal = num + 1;
+
+console.log(num);
+console.log(newVal);
+
+var numString = num.toString();
+console.log(numString.length);
+*/
+
+// ----------------------------- Chapter 30 : Controlling the length of decimals ----------------------
+
+var price = 9.5;
+var tax = 6.5;
+var total = (price * 6.5) / 100;
+
+console.log(total);
+
+var fixedValue = total.toFixed(2);
+console.log(fixedValue);
