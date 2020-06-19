@@ -1383,3 +1383,277 @@ var arr = foods.slice(2); // Just start index
 
 console.log(arr); // "Snacks", "Sandwich", "Fries"
 */
+
+// *********** Task Triangle ************
+/*
+for (var i = 1; i <= 5; i++) {
+  for (var j = 1; j <= i; j++) {
+    document.write(j);
+  }
+  document.write("<br>");
+}
+*/
+
+/*
+for (var i = 1; i <= 5; i++) {
+  for (j = 4; j >= i; j--) {
+    document.write("&nbsp&nbsp");
+  }
+  for (var k = 1; k < i * 2; k++) {
+    document.write("*");
+  }
+  document.write("<br>");
+}
+*/
+
+// *** String ***
+
+// JavaScript strings are used for storing and manipulating text
+// string is zero or more characters written inside quotes
+
+/*
+var a = "Hello world";
+
+var name1 = "john"; // double quotes
+var name2 = "mark"; // single quotes
+
+console.log(a.length);
+*/
+
+// *** Escape Chracters ***
+
+/*
+var a = "Hello' World"; // single quote
+var b = 'Hello" World'; // double quote
+var c = "Hello \\ World"; // backslash
+var d = "Hello\n World"; //new line
+var e = "Hello\t World"; //tab
+
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+console.log(e);
+*/
+
+// *** String functions ***
+
+/*
+// toLowerCase() function (convert string in lowercase letters)
+
+var food = "sANDWich";
+
+var updatedFood = food.toLowerCase();
+
+console.log(food);
+console.log(updatedFood);
+
+// toUpperCase() (convert string in uppercase letters)
+
+var food = "sANDWich";
+
+var updatedFood = food.toUpperCase();
+
+console.log(food);
+console.log(updatedFood);
+
+var food = "PIZza";
+var input = "pIzza";
+
+if (food.toLowerCase() === input.toLowerCase()) {
+  console.log("Match");
+} else {
+  console.log("Not match");
+}
+*/
+
+// *** Slice function ***/
+
+// slice() extracts a part of a string and returns the extracted part in a new string
+// the method takes 2 parameters: the start position and the end position (end not included)
+// string character count starts from 0 as arrays
+
+/*
+var a = "Hello world"; // H=0, e=1, l=2, l=3, 0=4
+
+var b = a.slice(6, 9); // return Wor
+// 6 to (9 - 1)
+
+// if we omit the second parameter it will return rest of the string
+
+var c = a.slice(6); // return World
+
+// if a parameter is negative, the position is counted from the end of the string
+
+var d = a.slice(-5, -2); // d=-1,l=-2,r=-3,o=-4,w=-5
+console.log(d);
+*/
+
+// *** indexOF() function
+
+// index of return the index of the first occurrence of a specified text in a string
+// if not found -1 is returned
+
+/*
+var a = "To be or not to be";
+var b = a.indexOf("be"); // return 3
+
+console.log(b);
+*/
+
+// Second optional argument in indexOF() specify position to begin search in a string, if not provided it default value is 0
+
+/*
+var c = a.indexOf("be", 10); // return 16
+console.log(c);
+*/
+
+// *** lastIndexOf function
+// last index of return the index of the last occurrence of a specified text in a string
+// it searched backward from the end to the beginning
+// if not found -1 is returned
+
+/*
+var a = "To be or not to be";
+var b = a.lastIndexOf("be"); // return 16
+
+console.log(b);
+*/
+
+// Second optional argument in indexOF() specify position to begin search in a string, if not provided it default value is 0
+
+/*
+var c = a.lastIndexOf("be", 10); // return 3
+console.log(c);
+*/
+
+// *** charAt() function***
+
+// splice() function extract the portion of string provided the starting and ending positions
+// charAt() function takes single index input and return character at that index
+// returns empty string if index does not exists on negative index provided
+
+var a = "To be or not to be";
+var b = a.charAt(7);
+
+console.log(b);
+
+// *** replace() function ***
+
+/*
+// the replace() function replaces a specified value with another value in a string
+// the replace() function does not change the string it is called on. it returns a new string
+
+var str = "To be or not to be";
+var b = str.replace("be", "hello");
+
+console.log(b);
+
+// by default, the replace() function replaces only the first match
+// to replace all matches, use a regular expression with a /g flag (global match) and without quotes
+
+var str = "To be or not to be";
+var b = str.replace(/be/g, "hello");
+
+console.log(b);
+
+// to replace case insensitive , use a regular expression with an /i flag (insensitive)
+
+var str = "To be or not to be";
+var b = str.replace(/to/i, "hello");
+
+console.log(b);
+
+// combine both g and i flag to replace all matches and case insensitive
+
+var str = "To be or not to be";
+var b = str.replace(/TO/gi, "hello");
+
+console.log(b);
+*/
+
+// *** split() function ***
+
+/*
+// the split() function is used to split a string into an array of substrings and returns the new array
+
+var str = "To be or not to be";
+var b = str.split(" "); // split with space
+
+//console.log(b);
+
+// split can be done with commas, spaces or any character
+
+var str = "To,be or|not to, be";
+
+var a = str.split(","); // split with commas
+var b = str.split(" "); // split with space
+var c = str.split("|"); // split on pipe
+
+console.log(a);
+console.log(b);
+console.log(c);
+*/
+
+// *** Math Class ***
+
+// math class provides many functions that allows you to perform mathematical tasks on numbers
+
+// Math.round(x) returns the value of x rounded to its nearest integer
+
+/*
+var average = (15 + 23 + 39) / 3; // 25.66
+var roundedAverage = Math.round(average); // 26
+console.log(average);
+console.log(roundedAverage);
+
+console.log(Math.round(4.7));
+console.log(Math.round(4.1));
+console.log(Math.round(4.5));
+console.log(Math.round(-4.1));
+console.log(Math.round(-4.7));
+console.log(Math.round(5));
+
+// Math.ceil(x) returns the value x rounded up to its nearest integer
+
+console.log(Math.ceil(4.7)); // 5
+console.log(Math.ceil(4.1)); // 5
+console.log(Math.ceil(-4.1)); // 4
+console.log(Math.ceil(-4.7)); // 4
+
+// Math.floor(x) return the value x rounded down to us nearest integer
+
+console.log(Math.floor(4.7)); // 4
+console.log(Math.floor(4.1)); // 4
+console.log(Math.floor(-4.1)); // -5
+console.log(Math.floor(-4.7)); // -5
+
+// if you want build a game that allow user to guess a number
+// Math.random() returns random number between 0 (inclusive) ,and 1 (exclusive)
+
+var num = Math.random();
+
+// if you want to generate random number between some range then you have to add some calculations like
+
+var a = Math.random();
+console.log("A = " + a);
+
+var num1 = a * 6;
+console.log("Num1 = " + num1);
+
+var num2 = num1 + 1;
+console.log("Num2 = " + num2);
+
+var num3 = Math.floor(num2);
+console.log("Num3 = " + num3);
+*/
+
+// *** controlling the length of decimals ***
+
+//  in arithmetic operation you may face numbers with many decimal place
+
+var average = (15 + 23 + 39) / 3; // 25.6666
+
+// to limit decimal places to specified number you can call toFixed() function on number and round last digit
+
+var avg = average.toFixed(3); // returns 25.667
