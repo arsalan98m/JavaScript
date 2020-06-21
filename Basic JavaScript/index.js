@@ -1533,10 +1533,12 @@ console.log(c);
 // charAt() function takes single index input and return character at that index
 // returns empty string if index does not exists on negative index provided
 
+/*
 var a = "To be or not to be";
 var b = a.charAt(7);
 
 console.log(b);
+*/
 
 // *** replace() function ***
 
@@ -1650,6 +1652,7 @@ console.log("Num3 = " + num3);
 
 // *** controlling the length of decimals ***
 
+/*
 //  in arithmetic operation you may face numbers with many decimal place
 
 var average = (15 + 23 + 39) / 3; // 25.6666
@@ -1657,3 +1660,479 @@ var average = (15 + 23 + 39) / 3; // 25.6666
 // to limit decimal places to specified number you can call toFixed() function on number and round last digit
 
 var avg = average.toFixed(3); // returns 25.667
+*/
+
+// *** Date object ***
+
+/*
+// it will show complete date with current timezone, if you change the timezone of your computer it will show differnet
+var date = new Date();
+
+console.log(date);
+
+// Thre are 4 ways to create  a new date object
+
+// new Date()
+
+// new Date(year, month, day, hours, minutes, seconds, milliseconds)
+
+// new Date(milliseconds);
+
+// new Date(date string)
+
+var date = new Date("2019 7 3");
+console.log(date);
+
+var date = new Date("2019/7/3 10:15:20");
+console.log(date);
+
+// Retrieving the Date components
+
+var date = new Date("June 14 2019 10:45:25");
+console.log(date);
+
+console.log(date.getFullYear()); // 2019
+console.log(date.getMonth()); // 5
+console.log(date.getDate()); // 14
+console.log(date.getDay()); // 5
+console.log(date.getHours()); // 10
+console.log(date.getMinutes()); // 45
+console.log(date.getSeconds()); // 25
+console.log(date.getMilliseconds()); // 0
+console.log(date.getTime());
+
+// where get is used to retrience a specific component from a date, set is used to modify component of a date
+
+var date = new Date("June 14 2019 10:45:25");
+console.log(date);
+
+date.setFullYear(2017);
+console.log(date);
+*/
+
+// *** Converting Day of Week to Text ***
+
+/*
+var dayList = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+var date = new Date("June 14 2019 10:45:25");
+
+var day = date.getDay();
+
+var nameOfDay = dayList[day];
+
+console.log(date);
+console.log("Day: " + day);
+console.log("Name of Day: " + nameOfDay);
+*/
+
+// *** Calculate Time Difference ***
+
+// you can calculate time difference b/w two days using getTime and calculate differnce in days
+// getTime returns time in milliseconds so you can find out time differnce in milliseconds by subtracting dates
+// then need ind out of milliseconds in a day --- 24 hour * 60 min * 60 sec * 1000 milliseonds
+// and divide time difference in milliseonds
+
+/*
+var date1 = new Date("July 14 2019 11:12:15");
+
+var date2 = new Date("July 17 2019 11:12:15");
+
+console.log("Date 1:", date1);
+
+console.log("Date 2:", date2);
+
+var timeDiff = date2.getTime() - date1.getTime();
+
+console.log("Time Difference:", timeDiff);
+
+var timeInDay = 24 * 60 * 60 * 1000;
+console.log("Time in day:", timeInDay);
+
+var daysDiff = timeDiff / timeInDay;
+
+console.log("daysDiff:" + daysDiff);
+*/
+
+// *** Functions *** //
+
+// A function is a block of JavaScript that does the same thing again and again
+// A JS function is executed when "something" invokes it (calls it)
+// it saves you repetitive coding and makes your code easier to understand
+// you can reuse code define the code once and reuse it many times
+
+/*
+console.log("Before function");
+
+function showMessage() {
+  console.log("Hello world");
+}
+console.log("After function");
+
+showMessage();
+console.log("After function call");
+*/
+
+// function can returns data back to caller
+// after executing logic in function if you want to return result to the caller of function  then you use return keyword
+// when js reaches return statement the function will stop executing and return value back to the caller
+// every function in js returns undefined unless otherwise specified
+
+/*
+function sum(a, b) {
+  console.log(a + b);
+}
+sum(2, 2);
+sum(3, 1);
+sum(9);
+
+function calculateScore(sub1, sub2, sub3) {
+  return (sub1 + sub2 + sub3) / 3;
+}
+
+function findGrade(score) {
+  if (score > 80 && score <= 100) {
+    console.log("Grade A");
+  } else if (score > 70 && score <= 80) {
+    console.log("Grade B");
+  } else if (score > 60 && score <= 70) {
+    console.log("Grade C");
+  } else {
+    console.log("Grade F");
+  }
+}
+
+var score1 = calculateScore(80, 60, 80);
+console.log(score1);
+findGrade(score1);
+
+findGrade(56);
+findGrade(81);
+findGrade(20);
+*/
+
+/*
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+
+function sum(a, b) {
+  return multiply(a, b) + b;
+}
+
+// var mul = multiply(4, 3);
+// var add = sum(multiply(4, 3), 5); // 12 + 5
+
+//console.log("Multiply = " + mul);
+//console.log("Sum = " + add);
+
+var add = sum(7, 5);
+console.log(add);
+*/
+
+// *** Local vs Global Variables *** //
+
+// variable can have local or global scope
+// a global var is one that's declared in the main body of your code not inside the function
+// a local var is one that's declared inside a function
+
+/*
+var a = 7; // global variable
+
+function sum() {
+  var b = 6; // local variable
+  var c = a + b; // 13, Accessing global
+  console.log("C = " + c);
+}
+
+sum();
+
+console.log("A = " + a); // 7
+*/
+
+/*
+var a = 7; // global variable
+
+function sum() {
+  var b = 6; // local variable
+  a = b + 5;
+  console.log("A " + a); // accessing global variable
+}
+
+sum();
+console.log("A = " + a); // 11, value of a updated
+*/
+
+/*
+var a = 7; // Global Variable
+
+function sum() {
+  var o = 6; // local variable
+  a = o + 5;
+}
+
+sum();
+
+console.log("O = " + o);
+// error, o is not available outside sum function
+*/
+
+/*
+var a = 7; // global variable
+
+function sum() {
+  var a = 6; // Local variable same name as global
+  a = 3 + 2; // Local a variable will be affected
+  console.log("A = " + a); // 5, access local varaible
+}
+
+sum();
+
+console.log("A = " + a); // 7, access global variable
+*/
+
+// *** Global Variables without var keyword ***//
+
+// agar variable banaty waqt sath main var keyword na likhen tu woh global var ban jata hai
+// or function main bhi hum ny variable banaya or sath main var nahi likha tu woh global var ban jayega
+
+/*
+a = 7; // Without var still global variable
+
+function sum() {
+  var b = 6; // local variable
+  a = b + 5;
+  console.log("A = " + a); // Accessing global variable
+}
+
+sum();
+
+console.log("A = " + a); // 11, value of a updated
+*/
+
+/*
+a = 7; // without var still global variable
+
+function sum() {
+  b = 6; // global variable because its without var
+  a = b + 5;
+  console.log("A = " + a); // accessing global variable
+}
+
+sum();
+
+console.log("B = " + b);
+*/
+
+// *** Function Expressions ***//
+
+// A JS function can also be defined using an expression
+// A function can be stored in a variable
+
+/*
+var sum = function (a, b) {
+  return a + b;
+};
+
+var c = sum(4, 5);
+console.log(c);
+
+var square = function (num) {
+  return num * num;
+};
+
+var b = square(4);
+console.log(b);
+*/
+
+// *** Function Hoisting *** //
+
+// Hoisting is JavaScript's default behaviour of moving declarations to the top of the current scope
+
+// jab hum koi function banaty hai tu javascript usko by default top py ly ata hai isy function hoisting kehty hain
+// yani uski declaration line no 0 par chali jati hai
+// iska matlab yeh hai k jahan ap ny function likha hai us sy pehly ap function ko call karwadyn tu woh call ho jayega
+
+/*
+var total = sum(5, 6); // calling before declaration
+console.log("Sum = " + total);
+
+function sum(a, b) {
+  return a + b;
+}
+*/
+
+// jab hum hoisting ki baat karty hain tu declaration top par chaly jati hai initialization nhi
+// yeh example kuch aisy hai
+
+/*
+var j;
+
+console.log("J = " + j);
+
+j = 6;
+*/
+
+/*
+console.log("J Before: " + j);
+
+var j = 6;
+
+console.log("J After: " + j);
+*/
+
+/*
+var mul = multiply(3, 2);
+console.log("Mul = " + mul);
+
+var add = sum(4, 6);
+console.log("Add = " + add);
+
+var sum = function (a, b) {
+  return a + b;
+};
+
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+*/
+
+// *** Arguments Passed by Value ***
+// primitive data is passed by value the function only gets to know the values not the arguments location
+// if a function changes an argument's value it does not change the parameters original value
+
+/*
+var num = 5;
+
+function changeValue(a) {
+  a = 7; // change to a will not affect num
+}
+
+changeValue(num);
+console.log(num);
+
+*/
+
+// *** Arguments Passed by Reference  ***
+// In JavaScript, object references are values
+// Non-primitive value such as array or a user-defined object are passed by reference
+// if function changes the object's properties that change is visible outside the function
+
+/*
+var arr = [4, 6, 7, 9];
+
+function updateArray(val) {
+  // array recieved in val
+  val[1] = 57; // updating val will also update arr
+}
+
+console.log(arr[1]); // 6 before calling function
+updateArray(arr);
+console.log(arr[1]);
+*/
+
+/*
+var obj = { name: "john", age: 56 };
+
+function updateObject(val) {
+  // object received in val
+  val.age = 40; // updating val will also update obj
+}
+
+console.log(obj.age); // 56 before calling function
+updateObject(obj);
+console.log(obj.age); // 40 after calling function
+*/
+
+// *** Recursive function ***//
+// A recursive function is a function that calls itself
+
+/*
+function factorial(n) {
+  if (n <= 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+// 3 * factorial(3-1);
+// 2 * factorial(2-1);
+
+console.log(factorial(6));
+console.log(factorial(3));
+*/
+
+// *** Switch Statenebt *** //
+
+// the switch statement executes a block of code depending on different cases
+// the switch statement is a part of javascript's conditional statmenets which are used to perform different actions based on different condition
+// switch statment works for equality checks only you can not apply range greater than or less than
+
+// switch case use strict comparison (===)
+// the value must be of the same type to match
+
+/*
+var a = prompt("please enter character");
+
+switch (a) {
+  case "A":
+    console.log("A is vowel");
+    break;
+  case "E":
+    console.log("E is vowel");
+
+  case "I":
+    console.log("I is vowel");
+
+  case "O":
+    console.log("O is vowel");
+    break;
+  case "U":
+    console.log("U is vowel");
+    break;
+  default:
+    console.log("not vowel");
+    break;
+}
+*/
+
+// *** While loop *** //
+
+// The while loop loops through a block of code as long as specified condition is true
+// ismy hum control user ky hath main dy dyty hain
+// execution is dependent on user input
+
+/*
+var i = 0;
+
+while (i < 10) {
+  console.log("I = " + i);
+  i++;
+}
+*/
+
+/*
+var doContinue = true;
+
+while (doContinue) {
+  console.log("Hello");
+
+  var input = prompt("Please enter 'y' to run again or any key to stop");
+
+  if (input.toLowerCase() !== "y") {
+    doContinue = false;
+  }
+}
+console.log("After loop");
+*/
+
+// ***do-while loop *** //
+// this loop will execute the block of code once, before checking if the condition is true
+
+var i = 0;
+
+do {
+  console.log("I = " + i);
+  i++;
+} while (i < 10);
