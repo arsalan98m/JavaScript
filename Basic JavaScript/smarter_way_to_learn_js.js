@@ -1660,6 +1660,7 @@ console.log(numString.length);
 
 // ----------------------------- Chapter 30 : Controlling the length of decimals ----------------------
 
+/*
 var price = 9.5;
 var tax = 6.5;
 var total = (price * 6.5) / 100;
@@ -1668,3 +1669,566 @@ console.log(total);
 
 var fixedValue = total.toFixed(2);
 console.log(fixedValue);
+*/
+
+// ---------------------------- Chapter 31: Getting the current date and time --------
+
+/*
+var rightNow = new Date();
+alert(rightNow);
+alert(typeof rightNow);
+
+// if you need date object to be a string you can convert it to one of the same way you convert a number to a strin
+var dateString = rightNow.toString();
+alert(dateString);
+alert(typeof dateString);
+
+
+var b = rightNow.getDay();
+alert(b);
+*/
+
+/*
+var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+var rightNow = new Date();
+
+var theDay = rightNow.getDay();
+alert(theDay);
+
+alert(days[theDay]);
+*/
+
+// ------------------ Chapter 32: Extracting parts of the date and time ---------------
+// you can access individual elemts of date object
+/*
+var rightNow = new Date();
+console.log("Date: " + rightNow);
+
+var currentDay = rightNow.getDay();
+console.log("Current Date = " + currentDay);
+
+var currentMonth = rightNow.getMonth();
+console.log("Current Month = " + currentMonth);
+
+var currentDate = rightNow.getMonth();
+console.log("Current Date = " + currentDate);
+
+var currentYear = rightNow.getFullYear();
+console.log("Current Year = " + currentYear);
+
+var currentHour = rightNow.getHours();
+console.log("Current Hour = " + currentHour);
+
+var currentMinute = rightNow.getMinutes();
+console.log("Current minute = " + currentMinute);
+
+var currentSecond = rightNow.getSeconds();
+console.log("Current second = " + currentSecond);
+
+var currentMills = rightNow.getMilliseconds();
+console.log("Current milliseconds = " + currentMills);
+
+var currentTime = rightNow.getTime();
+console.log("Current time on milli seconds = " + currentTime);
+*/
+
+/*
+var age = 2;
+
+var ageInDays = age * 365;
+console.log(ageInDays);
+
+var ageInHours = age * 365 * 24;
+console.log(ageInHours);
+
+var ageInMinutes = age * 365 * 24 * 60;
+console.log(ageInMinutes);
+
+var ageInSeconds = age * 365 * 24 * 60 * 60;
+console.log(ageInSeconds);
+
+var ageInMills = age * 365 * 24 * 60 * 60 * 1000;
+console.log(ageInMills);
+*/
+
+// -------------------------- Chapter 33 : Specifying a date and time --------------
+
+/*
+var dob = new Date("Dec 26, 1991");
+console.log("Date of birth: " + dob);
+
+var dobMili = dob.getTime();
+console.log(dobMili); // milli seconds from 1970 to 1991
+
+var today = new Date();
+console.log(today);
+
+var todayMili = today.getTime();
+console.log(todayMili); // milli second from 1970 to 2020
+
+var diff = todayMili - dobMili;
+console.log("Difference: " + diff);
+
+var convertYear = diff / (1000 * 60 * 60 * 24 * 30 * 12);
+console.log(convertYear);
+
+var accurateAge = Math.floor(convertYear);
+console.log("Age = " + accurateAge);
+*/
+
+// ------------------------------ Chapter 34 : Changing elements of a date time --------------
+
+// you can change individual elemts of date object
+
+/*
+var d = new Date();
+console.log(d);
+
+// set the year of an existing date object without changing any other element
+d.setFullYear(2001);
+console.log(d);
+
+d.setMonth(11);
+console.log(d);
+
+d.setDate(1);
+console.log(d);
+*/
+
+// --------------------------- Chapter 35: Functions ---------------------
+
+/*
+A function is a block of JavaScript that robotically does the same thing again and again,
+whenever you invoke its name. It saves you repetitive coding and makes your code easier to
+understand.
+*/
+
+/*
+var now = new Date();
+var theHr = now.getHours();
+var theMin = now.getMinutes();
+alert("time: " + theHr + ":" + theMin);
+*/
+
+/*
+// this is function declaration
+
+function tellTime() {
+  var now = new Date();
+  var theHr = now.getHours();
+  var theMin = now.getMinutes();
+  alert("time: " + theHr + ":" + theMin);
+}
+
+// this is function invoking
+tellTime();
+tellTime();
+*/
+
+/*
+// keyword -- functio
+// function name --- any legal name as variable name
+// parenthesis
+// curly brackets
+
+function hello() {
+  alert("hello world");
+}
+
+hello();
+*/
+
+/*
+function calculationValue() {
+  var a = 6;
+  var b = 7;
+  var c = a + b;
+  alert(c);
+}
+
+calculationValue();
+calculationValue();
+*/
+
+/*
+var calc = function () {
+  var a = 5;
+  alert(a);
+};
+
+calc();
+
+var calc2 = function () {
+  var a = 10;
+  alert(a);
+};
+
+calc2();
+*/
+
+// ----------------- Chapter 36 : Functions passing them data -------------------
+
+function greerUser() {
+  alert("Hello, there");
+}
+
+/*
+Now, instead of just calling the function, you're calling it and passing data to it. The
+string inside the parentheses, i.e. the data you're passing, is called an argument.*/
+
+// A variable inside the parentheses in a function statement is known as a parameter.
+
+// You don't have to declare a variable when it's used as a parameter in a function
+// definition. When it's used as a parameter, the declaration is implicit.
+
+/*
+function greetUser(greeting) {
+  alert(greeting);
+}
+
+greetUser("Hello, there.");
+
+var whatever = "hello";
+
+greetUser(whatever);
+*/
+
+/*
+function add_value(first, second) {
+  var a = first;
+  var b = second;
+  var c = a + b;
+  alert(c);
+}
+
+add_value(1, 2);
+add_value(3, 1);
+add_value(4, 4);
+*/
+
+/*
+function showMessage(m, string, num) {
+  alert(m + string + num);
+}
+
+var month = "March";
+showMessage(month, "'s winner number is ", 23);
+*/
+
+/*
+function cafePiyala(typeOfTea) {
+  alert("Making " + typeOfTea);
+  alert("Tea is ready");
+}
+
+cafePiyala("Kashmiri Tea");
+cafePiyala("Green Tea");
+cafePiyala("Elaichi Tea");
+cafePiyala("Leamon Grass Tea");
+*/
+
+// ----------------------- Chapter 37 : Passing data back from them -----------
+
+/*
+function add_value(first, second) {
+  var a = first;
+  var b = second;
+  var c = a + b;
+  return c;
+}
+
+var d = add_value(3, 5);
+
+d = d + 5;
+
+alert(d);
+
+var e = add_value(7, 2);
+e = e + 3;
+alert(e);
+*/
+
+/*
+function judgeMarathon() {
+  alert("Reviewing application");
+  alert("A+");
+  return "A+";
+}
+
+var result = judgeMarathon();
+
+if (result === "A+") {
+  alert("Reward Rs.25000");
+} else if (result === "A") {
+  alert("Reward Rs.20000");
+} else if (resilt === "B") {
+  alert("Reward Rs 10000");
+} else {
+  alert("No reward");
+}
+*/
+
+/*
+function add_value(first, second) {
+  var a = first;
+  var b = second;
+  var c = a + b;
+  return c;
+}
+
+//1
+add_value(6, 7);
+
+//2
+
+var d = add_value(3, 5);
+alert(d);
+
+//3
+alert(add_value(4, 5));
+
+//4
+var e = 23;
+var f = e + add_value(5, 7);
+alert(f);
+*/
+
+/*
+function add_value(first, second) {
+  var a = first;
+  var b = second;
+  var c = a + b;
+  return c;
+}
+
+function multiply(multiple, value) {
+  return value * multiple;
+}
+
+var d = add_value(3, 5); // 8
+var e = multiply(2, 5); // 10
+var f = multiply(2, d); // 2, 8 ---  16
+var g = multiply(2, add_value(2, 5)); // 2 , 7 --- 14
+alert(g);
+
+var i = multiply(2, add_value(7, 2)); // 2, 9 -- 18
+
+alert(i);
+*/
+
+/*
+function add_value(first, second) {
+  var a = first;
+  var b = second;
+  var c = a + b;
+  return c;
+}
+
+function multiply(multiple, value) {
+  return multiple * add_value(3, value); // 2, (3,6)=9 -- 18
+}
+
+var d = multiply(2, 6);
+alert(d);
+*/
+
+/*
+function add_value(first, second) {
+  var a = first;
+  var b = second;
+  var c = a + multiply(2, b); // 3 + (2,6 == 12) = 15
+  return c;
+}
+
+function multiply(multiple, value) {
+  return multiple * value;
+}
+
+var d = add_value(3, 6);
+alert(d);
+*/
+
+/*
+function add_value(one, two, three) {
+  return one - sum(two, three); // 4 - (6,2 = 8) = -4
+}
+
+function sum(a, b) {
+  return a + b;
+}
+
+var d = add_value(4, 6, 2);
+alert(d);
+*/
+
+// ----------------- Chapter 38 : Functions Local vs Global variables -------------
+
+// A global variable is one that's declared in the main body of your code—that is, not inside a function.
+
+/*
+A local variable is one that's declared inside a function. It can be either a parameter of
+the function, which is declared implicitly by being named as a parameter, or a variable
+declared explicitly in the function with the var keyword.
+*/
+
+/*
+var a = 5; // global variable
+
+function add_value() {
+  var b = 5; // local variable
+  var c = a + b;
+  alert(c);
+}
+
+add_value();
+alert(a);
+*/
+
+/*
+var a = 5; // global varaible
+
+function add_value() {
+  var b = 5; // local variable
+  var c = 7;
+  a = b + c; // updating global variable
+}
+
+alert(a);
+add_value();
+alert(a);
+*/
+
+/*
+function add_value() {
+  var a = 5; // local variable
+  var b = 5;
+  var c = 7;
+  a = b + c;
+  alert(a);
+}
+
+//alert(a); // error a is defined inside the function
+add_value();
+alert(a);
+*/
+
+/*
+b = 6;
+
+function add_value() {
+  a = 5;
+  var c = 7;
+  alert(a);
+  alert(c);
+}
+
+add_value();
+
+alert(b);
+alert(a);
+*/
+
+/*
+var a = 6;
+
+function add_value() {
+  var a = 5;
+  alert(a);
+}
+
+add_value();
+alert(a);
+*/
+
+// ----------------- Chapter 39 - 40: Switch Statement --------------------------
+
+var section = "B";
+/*
+// if
+
+
+if (section === "A") {
+  alert("Class Time: 11am");
+} else if (section === "B") {
+  alert("Class Time: 1am");
+} else {
+  alert("No class");
+}
+*/
+
+// switch
+
+/*
+switch (section) {
+  case "A":
+  case "B":
+    alert("Class Time: 1pm");
+
+  case "C":
+    alert("Class Time: 3pm");
+    break;
+  default:
+    alert("No class");
+}
+*/
+
+// ---------------------- Chapter 41 : while loops --------------------
+
+// while loop (main control user ky hath main hota hain hamain nhi pata loop kab tak chaly ga tu hum control user ky hath main dy dyty hain)
+
+/*
+var i = 0;
+
+while (i <= 3) {
+  alert(i);
+  i++;
+}
+*/
+
+/*
+var doContinue = true;
+
+while (doContinue) {
+  alert("HELLO WORLD");
+  var userInput = prompt(
+    "Do you want to continue? Please press Y for Yes on any key for No"
+  );
+  alert(userInput);
+
+  if (userInput.toLowerCase() !== "y") {
+    doContinue = false;
+  }
+}
+*/
+
+// ----------------- Chapter 42 : do..while loops ---------------------
+// it always executes that code at least once, no matter what the looplimiter says.
+// condition true ho ya na ho at least ek bar tu loop lazmi chalyga yeh differece while or do-while main
+
+/*
+var i = 0;
+
+do {
+  alert(i);
+  i++;
+} while (i <= 3);
+*/
+
+var i = 0;
+
+while (i < 0) {
+  alert(i);
+  i++;
+}
+// The code says to keep running an alert as long as the counter is less than 0. But since the
+// counter is never less than 0, the code inside the curly brackets never executes.
+
+//Compare this with the do...while loop.
+
+var i = 0;
+
+do {
+  alert(i);
+  i++;
+} while (i < 0);
