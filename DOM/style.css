@@ -1,0 +1,49 @@
+.container{
+  border: 5px solid #000;
+}
+
+#header{
+  background: orangered;
+}
+
+#menu{
+  background: yellowgreen;
+}
+
+#menu ul{
+  list-style: none;
+  margin: 0;
+  
+}
+
+#menu ul li{
+  display: inline-block;
+  padding: 10px;
+}
+
+#content{
+  
+}
+
+#sidebar{
+  background: cyan;
+}
+
+#footer{
+  background: orangered;
+}
+
+.abc{
+  background-color: crimson;
+  color: #fff;
+}
+
+.xyz{
+  font-style: italic;
+  font-size: 40px;
+  color: yellow;
+}
+
+.efg{
+  text-align: center;
+}
