@@ -115,7 +115,7 @@ let { name, school } = student;
 console.log(name);
 console.log(school);
 
-// ley say you can use new variable name
+// let say you can use new variable name
 
 let { name: newName } = student;
 console.log(newName);
@@ -179,7 +179,9 @@ console.log(name);
 */
 
 // ------------ Synchronous and Asynchronous Programming ------------- //
+// synchronous means line by line
 
+// this hoisting (by default function declaration goes on top of our js file)
 /*
 testing();
 
@@ -195,6 +197,10 @@ console.log("3");
 
 //  2 1 2 3
 */
+
+// this is asynchronus code
+// asynchronus means ap koi bhi cheez jo ap baad main chalny ko kehy rahy hain
+// asynchronus browser ki special memory main ja kar register hojayega pehly sata synchronous code chaly ga usky bad async code chaly ga
 
 /*
 setTimeout(function () {
@@ -218,7 +224,9 @@ setTimeout(function () {
 console.log(myName); // undefined
 */
 
-// ---- Promise ---- //
+// ---- Promises ---- //
+
+// koi aisa kaam jo future main hoga or hamain nahi pata woh kitna time lega tu usky liyeh hum promises use karty hain
 
 // Three states
 // Pending, resolve and reject
@@ -290,4 +298,197 @@ firstAsync
   });
 
 console.log("2");
+*/
+
+// -------------------- Function Expression ------------------------- //
+
+// anonymous function jiska naam nahi hota usko hum kisi variable main save kara dyty hain
+
+/*
+let foo = function () {
+  console.log("Hello world function expression");
+};
+
+foo();
+*/
+
+// ------------------- Arrow Function ------------------------------- //
+
+/*
+let hello = (name) => {
+  console.log(`Hello ${name}`);
+};
+
+hello("arsalan");
+*/
+
+/*
+let hello = () => {
+  return "arsalan";
+};
+
+console.log(hello());
+*/
+
+/*
+let hello = (name) => `Hello ${name}`;
+
+let returnValue = hello("ahmed");
+console.log(returnValue);
+*/
+
+/*
+let sum = (num1, num2) => {
+  console.log(`${num1} + ${num2} is = ${num1 + num2}`);
+};
+
+sum(10, 2);
+*/
+
+// agar normal function main this ko tager karen tu woh us function ko target karega
+
+// jab k arrow function apny parent ko target karega
+
+/*
+function foo() {
+  console.log(this);
+}
+
+foo();
+
+let hello = () => {
+  console.log(this);
+};
+
+hello();
+*/
+
+// ------------------------ CallBack function and High order function ------------------- //
+
+// callback function ka matlab hai function as a parameter simple alfaz main
+
+/*
+function calculate(num1, num2, callBack) {
+  console.log("App started");
+  const a = num1;
+  const b = num2;
+  const c = a + b;
+  console.log(c);
+  callBack();
+}
+
+calculate(4, 5, function () {
+  console.log("App closed");
+});
+*/
+
+/*
+let getData = (renderData) => {
+  setTimeout(() => {
+    renderData("arsalan");
+  }, 3000);
+};
+
+let renderData = (name) => {
+  console.log(name);
+};
+
+getData(renderData);
+*/
+
+// ------------------- Higher Order Functions of Array --------------------------- //
+
+// 1) Filter
+
+/*
+let arr = [
+  { name: "arsalan", age: 24 },
+  { name: "ghous", age: 30 },
+];
+
+let filter = arr.filter((data) => {
+  return data.age === 24;
+});
+
+console.log(filter);
+*/
+
+// ----------------------- Search ------------------------//
+
+// startsWith and endsWith
+
+/*
+let name = "arsalan";
+let search = "ar";
+
+console.log(name.startsWith(search));
+
+if (name.startsWith(search)) {
+  console.log(name);
+}
+*/
+
+// 2) Map (purani array ko update kar k new array bana deta hai)
+
+/*
+let arr = ["apple", "banana", "mangi"];
+
+let newArr = arr.map((data) => data + " pi");
+
+console.log(arr);
+console.log(newArr);
+*/
+
+// --------------------- Fetch ------------------------------- //
+
+/*
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+  .then((response) => response.json())
+  .then((data) => console.log("result == ", data))
+  .catch((err) => console.log("error == ", err));
+
+*/
+
+// --------- async await alternate of promises -----------------//
+
+/*
+async function getData() {
+  let fetchData = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+
+  let data = await fetchData.json();
+
+  console.log(data);
+}
+
+getData();
+*/
+
+// ----------------- Classes ------------------------- //
+
+// old method for constructor function
+
+/*
+function Student(name, email) {
+  this.name = name;
+  this.email = email;
+}
+
+let student1 = new Student("arsalan", "example@gmail.com");
+
+console.log(student1);
+*/
+
+// issi cheez ko ES6 ny update kar k bana diya class
+
+/*
+class Student {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+}
+
+let newStudent = new Student("ahmed", "ahmed@gmail.com");
+
+console.log(newStudent);
 */
