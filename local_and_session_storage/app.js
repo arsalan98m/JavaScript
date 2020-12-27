@@ -1,27 +1,79 @@
-// Add a key value pair inside local storage
-localStorage.setItem("Name", "arsalan");
-localStorage.setItem("Name 2", "kamran");
+// Web Storage API - Provided by browser
+// session storage, local storage
+// setItem, getItem, removeItem, clear
 
-// retrieve an item from the local storage
-let name = localStorage.getItem("Name");
-console.log(name);
+/* 
+============================================
+Save data on localstorage with key value pair inside local storage with setItem()
+============================================
+*/
 
-// clears the entire local storage
-// localStorage.clear();
+// localStorage.setItem("name", "arsalan");
+// sessionStorage.setItem("name", "arsalan");
 
-// clear particular key/value pair
-localStorage.removeItem("Name");
+localStorage.setItem("name", "m.arsalan");
+localStorage.setItem("friend", "shaka");
+localStorage.setItem("job", "developer");
 
-// storing array item
-let impArray = ["adrak", "pyaz", "bhindi"];
-localStorage.setItem("Sabzi", JSON.stringify(impArray));
+/* 
+============================================
+retrieve an item from the localStorage
+with getItem()
+============================================
+*/
 
-// Retrieving array item
-let sabzi = JSON.parse(localStorage.getItem("Sabzi"));
-console.log(sabzi[0]);
+const name = localStorage.getItem("name");
+console.log("name => ", name);
 
-// **** Session storage methods are same as localStorage **** //
+/* 
+============================================
+remove one specific item from the localStorage 
+with (removeItem)
+============================================
+*/
 
-sessionStorage.setItem("sessionName1", "new name 1");
-sessionStorage.setItem("sessionName2", "new item 2");
-sessionStorage.setItem("sessionName3", "new item 3");
+localStorage.removeItem("friend");
+
+const anotherName = localStorage.getItem("friend");
+console.log("anotherName => ", anotherName);
+
+/* 
+============================================
+clears the entire local storage
+localStorage.clear()
+============================================
+*/
+
+localStorage.clear();
+
+/*
+===================================
+Local Storage with Multiple Values
+
+JSON.stringify() (to save multiple items)
+JSON.parse() (to recieve multiple items)
+===================================
+*/
+
+const friends = ["shaka", "bilal", "ahmed"];
+
+localStorage.setItem("friends", JSON.stringify(friends));
+
+const values = JSON.parse(localStorage.getItem("friends"));
+
+console.log(values[0]);
+
+let fruits;
+
+if (localStorage.getItem("fruits")) {
+  fruits = JSON.parse(localStorage.getItem("fruits"));
+} else {
+  fruits = [];
+}
+
+console.log("fruits=> ", fruits);
+
+// fruits.push("apple");
+// fruits.push("mango");
+
+localStorage.setItem("fruits", JSON.stringify(fruits));
