@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <h1 id="title">Hello</h1>
+    <button class="btn" id="btn">click me</button>
+
+    <!-- JavaScript -->
+    <script>
+      // Select the element or group of elements the we want
+      // Decide the effect we want to apply to the selection
+      /*
+        =============================
+          getElementById('element')
+        =============================
+        */
+
+      const h1 = document.getElementById("title");
+      h1.style.color = "green";
+
+      const btn = document.getElementById("btn");
+
+      btn.style.backgroundColor = "red";
+
+      btn.style.color = "white";
+    </script>
+  </body>
+</html>

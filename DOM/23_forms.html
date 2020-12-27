@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <form action="" id="form">
+      <input type="text" id="name" />
+      <input type="password" id="password" />
+      <input type="submit" value="submit" />
+    </form>
+
+    <!-- JavaScript -->
+    <script>
+      // submit event
+      // preventDefault
+      // how to get a value
+
+      const form = document.getElementById("form");
+      const name = document.getElementById("name");
+      const password = document.getElementById("password");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        console.log("form submitted");
+        console.log(name.value);
+        console.log(password.value);
+        name.value = "";
+        password.value = "";
+      });
+    </script>
+  </body>
+</html>

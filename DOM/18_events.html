@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+
+    <style>
+      .red {
+        background: red;
+        color: white;
+        text-transform: uppercase;
+        font-size: 2rem;
+      }
+
+      .blue {
+        background: blue;
+        color: white;
+        text-transform: capitalize;
+        letter-spacing: 10px;
+      }
+      .btn {
+        background: red;
+        color: white;
+        border: transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>events in javascript</h2>
+    <p>hey, I can trigger an event</p>
+    <button class="btn">click me</button>
+    <!-- JavaScript -->
+    <script>
+      // select element
+      // addEventListernet()
+      // what event, what to do
+
+      const btn = document.querySelector(".btn");
+      const heading = document.querySelector("h2");
+
+      btn.addEventListener("click", function () {
+        // this is same
+        // heading.classList.toggle("blue");
+
+        let hasClass = heading.classList.contains("blue");
+
+        if (hasClass) {
+          heading.classList.remove("blue");
+        } else {
+          heading.classList.add("blue");
+        }
+      });
+    </script>
+  </body>
+</html>

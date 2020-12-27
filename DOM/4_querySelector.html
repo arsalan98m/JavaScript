@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <ul id="result">
+      <li class="special">apple</li>
+      <li>orange</li>
+      <li class="special">banana</li>
+      <li>pear</li>
+      <li class="special last">tomato</li>
+    </ul>
+
+    <!-- JavaScript -->
+    <script>
+      // Select the element or group of elements the we want
+      // Decide the effect we want to apply to the selection
+      /*
+        =============================
+         querySelector('anycss'); - selects single
+         querySelectorAll('anycss'); selects all
+        =============================
+        */
+
+      const result = document.querySelector("#result");
+      result.style.backgroundColor = "blue";
+
+      const item = document.querySelector(".special");
+      //   console.log(item);
+
+      const lastItem = document.querySelector("li:last-child");
+      //   console.log(lastItem);
+
+      const list = document.querySelectorAll(".special");
+
+      list.forEach(function (item) {
+        console.log(item);
+        item.style.color = "red";
+      });
+    </script>
+  </body>
+</html>

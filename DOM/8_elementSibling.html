@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <ul id="result">
+      <li class="first">first</li>
+      <li>list item 2</li>
+      <li>list item 3</li>
+      <li id="last">last</li>
+    </ul>
+
+    <!-- JavaScript -->
+    <script>
+      // previousElementSibling
+      // nextElementSibling
+      // this is the easiest way to target element
+      // in this  you dont worry about whitespace
+
+      const first = document.querySelector(".first");
+      first.nextElementSibling.style.color = "red";
+
+      const last = document.querySelector("#last");
+    </script>
+  </body>
+</html>

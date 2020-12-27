@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <h1>hello world</h1>
+    <div id="result">
+      <h1>second heading</h1>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // remove
+      // removeChild (require the parent)
+
+      const result = document.querySelector("#result");
+      //   result.remove();
+
+      const heading = result.querySelector("h1");
+      result.removeChild(heading);
+      console.log(heading);
+    </script>
+  </body>
+</html>

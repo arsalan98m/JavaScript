@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <h2>hello world</h2>
+    <h2>hello people</h2>
+
+    <ul>
+      <li>apple</li>
+      <li>orange</li>
+      <li>banana</li>
+      <li>pear</li>
+      <li>tomato</li>
+    </ul>
+
+    <!-- JavaScript -->
+    <script>
+      // Select the element or group of elements the we want
+      // Decide the effect we want to apply to the selection
+      /*
+        =============================
+          getElementsByTagName('tagname')
+          node-list = array-like object
+          index, length property but not array methods
+        =============================
+        */
+
+      const headings = document.getElementsByTagName("h2");
+      headings[0].style.color = "red";
+      //console.log(headings.length);
+
+      const items = document.getElementsByTagName("li");
+      items[2].style.color = "orange";
+
+      // this not work because this is not actual array
+      //   items.array.forEach((element) => {
+      //     console.log(element);
+      //   });
+
+      // this work beacuse first im coverting to array
+      const betterItems = [...items];
+      betterItems.forEach(function (item) {
+        console.log(item);
+      });
+    </script>
+  </body>
+</html>

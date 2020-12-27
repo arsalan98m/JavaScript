@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <ul id="result">
+      <li>apple</li>
+      <li>orange</li>
+      <li>banana</li>
+      <li>pear</li>
+      <li>tomato</li>
+    </ul>
+
+    <!-- JavaScript -->
+    <script>
+      // Select the element or group of elements the we want
+      // Decide the effect we want to apply to the selection
+
+      // childNodes - returns all childNodes including whitespace is treated as text node
+
+      // children
+      // firstchild
+      // lastchild
+
+      const result = document.querySelector("#result");
+      const allChildren = result.childNodes;
+      console.log(allChildren);
+
+      // best way to target children
+      const children = result.children;
+      console.log(children);
+
+      console.log(result.firstChild);
+      console.log(result.lastChild);
+    </script>
+  </body>
+</html>

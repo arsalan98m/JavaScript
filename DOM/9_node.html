@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <h1 id="special">this is special content</h1>
+
+    <!-- JavaScript -->
+    <script>
+      // nodeValue (this includes whitespaces)
+      // textContent (this is easy way to target text content)
+      // both of them return text content
+
+      const item = document.getElementById("special");
+      const value = item.firstChild.nodeValue;
+
+      const easyValue = item.textContent;
+      console.log(easyValue);
+    </script>
+  </body>
+</html>

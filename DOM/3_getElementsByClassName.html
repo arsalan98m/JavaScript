@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <h2>hello world</h2>
+    <h2>hello people</h2>
+
+    <ul>
+      <li class="special">apple</li>
+      <li>orange</li>
+      <li class="special">banana</li>
+      <li>pear</li>
+      <li class="special">tomato</li>
+    </ul>
+
+    <!-- JavaScript -->
+    <script>
+      // Select the element or group of elements the we want
+      // Decide the effect we want to apply to the selection
+      /*
+        =============================
+          getElementsByClassName('classname')
+          node-list = array-like object
+          index, length property but not array methods
+        =============================
+        */
+
+      const listItems = document.getElementsByClassName("special");
+      listItems[1].style.color = "blue";
+      console.log(listItems);
+    </script>
+  </body>
+</html>

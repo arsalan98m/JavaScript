@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+
+    <style>
+      .red {
+        background: red;
+        color: white;
+        text-transform: uppercase;
+        font-size: 2rem;
+      }
+
+      .blue {
+        background: blue;
+        color: white;
+        text-transform: capitalize;
+        letter-spacing: 10px;
+      }
+      .btn {
+        background: red;
+        color: white;
+        border: transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>events in javascript</h1>
+    <button class="btn">click me</button>
+    <!-- JavaScript -->
+    <script>
+      // click - fires after full action occurs
+      // mouse down - button is pressed
+      // mouse up - button is released
+      // mouseenter - moved onto an element
+      // mouseleave - moved out of an element
+
+      const heading = document.querySelector("h1");
+      const btn = document.querySelector(".btn");
+
+      btn.addEventListener("click", function () {
+        console.log("you clicked me");
+      });
+
+      btn.addEventListener("mousedown", function () {
+        console.log("down");
+      });
+
+      btn.addEventListener("mouseup", function () {
+        console.log("up");
+      });
+
+      btn.addEventListener("mouseenter", function () {
+        heading.classList.add("blue");
+      });
+
+      btn.addEventListener("mouseleave", function () {
+        heading.classList.remove("blue");
+      });
+    </script>
+  </body>
+</html>

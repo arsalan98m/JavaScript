@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+
+  <body>
+    <ul id="first">
+      <li class="item">list item</li>
+      <li>list item</li>
+    </ul>
+
+    <div id="second">i have some text content</div>
+
+    <!-- JavaScript -->
+    <script>
+      // innerHTML
+      //  textContent
+
+      const list = document.getElementById("first");
+      const item = document.querySelector(".item");
+      const div = document.getElementById("second");
+
+      console.log(div.textContent);
+      console.log(list.innerHTML);
+      console.log(list.textContent);
+
+      const randomVar = "random value";
+      const ul = document.createElement("ul");
+      ul.innerHTML = `
+      <li class="item">${randomVar}</li>
+      <li>list item</li>
+      <li>list item</li>
+      `;
+
+      document.body.appendChild(ul);
+
+      // this is not same as innerHTML (textConten is only use for inserting only text)
+      div.textContent = `
+      <li class="item">${randomVar}</li>
+      <li>list item</li>`;
+    </script>
+  </body>
+</html>
