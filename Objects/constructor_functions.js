@@ -16,3 +16,17 @@ function Person(firstName,lastName){
 const abid = new Person("abid","shah");
 console.log(abid);
 console.log(abid.fullName);
+
+// console.log(abid.constructor); // it will point back to a function that created  
+
+const a = {};
+console.log(a.constructor);
+
+const list = [];
+console.log(list.constructor);
+
+const sayHi = function(){};
+console.log(sayHi.constructor);
+
+const noman = abid.constructor('noman','ahmed'); // here construcotr was pointing to our person function
+console.log(noman.fullName());
